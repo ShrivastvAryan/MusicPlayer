@@ -14,7 +14,15 @@ export const Homepage=()=>{
 
         <div className="main-div">
             <div className="hero-section1">
-
+                <p>Your Music</p>
+                <div className="your--music-list">
+                    <span>
+                        <p className="your-title">Audio No.5464545</p>
+                        <p className="your-artist">Artist-unknown</p>
+                    </span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
 
             <div className="hero-section2">
@@ -45,7 +53,11 @@ export const Homepage=()=>{
 
         </div>
 
-        <div className="music-div"></div>
+        <div className="music--player-div">
+            <span className="">
+
+            </span>
+        </div>
         </>
     )
 }
