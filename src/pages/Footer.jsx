@@ -1,3 +1,5 @@
+import { FaPlay,  FaBackward , FaForward} from "react-icons/fa";
+
 export const MusicFooter=()=>{
     return(
         <>
@@ -14,18 +16,20 @@ export const MusicFooter=()=>{
        <div className="music--play-div">
 
         <div className="music-play"> 
-        <span>Backward</span>
-        <span>Play</span>
-        <span>Forward</span>
+        <span><FaBackward /></span>
+        <span><FaPlay /></span>
+        <span><FaForward /></span>
         </div>
 
        <div className="music-bar">
        <span></span>
+       <div className="bar-circle"></div>
        </div>
 
        </div>
 
     <div className="sound-bar">
+        <div className="bar-circle"></div>
     </div>
 
     </div>

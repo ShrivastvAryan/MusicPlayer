@@ -26,15 +26,6 @@ export const HeroSection=()=>{
                         <p>Yeh Jawani Hai Deewani</p>
                         <p className="music-artist">Artist- Pritam</p>
                         </span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
                     </div>
                 </div>
             </div>
