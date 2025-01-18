@@ -322,10 +322,15 @@ a{
 
     & span{
         display: inline-block;
-        width: 5rem;
+        width: 2rem;
         margin-left: 5rem;
         color: white;
         text-align: center;
+        cursor: pointer;
+    }
+
+    & .timer{
+        color:white;
     }
 }
 
@@ -339,6 +344,7 @@ a{
         border: 0.1rem solid rgb(247, 10, 10);
         margin: 0.4rem 1rem 0 0.5rem;
     }
+
 }
 
 .sound-bar{

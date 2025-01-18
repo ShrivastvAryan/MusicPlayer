@@ -1,6 +1,46 @@
-import { FaPlay,  FaBackward , FaForward} from "react-icons/fa";
+import { FaPlay,  FaBackward , FaForward, FaPause} from "react-icons/fa";
+import song from "/music/illahi.mp3?url"
+import { useEffect, useRef, useState } from "react";
 
 export const MusicFooter=()=>{
+    const[isPlaying,setIsPlaying]=useState(false);
+    const[currentTime,setCurrentTime]=useState(0);
+    const audioRef=useRef(new Audio(song)); // useRef keep the song intact at its place
+
+    const toggleFile=()=>{
+     const audio = audioRef.current;
+        if(isPlaying){
+            audio.pause();
+            setIsPlaying(false);
+        }
+        else{
+            audio.play();
+            setIsPlaying(true);
+        }
+    };
+
+    useEffect(() => {
+        const audio = audioRef.current;
+
+        const handleTimeUpdate = () => {
+            setCurrentTime(audio.currentTime);
+        };
+
+        audio.addEventListener("timeupdate", handleTimeUpdate);
+
+        return () => {
+            audio.removeEventListener("timeupdate", handleTimeUpdate);
+        };
+    }, []);
+    
+
+    const formatTime = (time) => {
+        const minutes = Math.floor(time / 60);
+        const seconds = Math.floor(time % 60);
+        return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+    };
+    
+
     return(
         <>
         <div className="music--player-div">
@@ -16,8 +56,9 @@ export const MusicFooter=()=>{
        <div className="music--play-div">
 
         <div className="music-play"> 
+        <span className="timer">{formatTime(currentTime)}</span>
         <span><FaBackward /></span>
-        <span><FaPlay /></span>
+        <span onClick={toggleFile} >{isPlaying ? <FaPause/> : <FaPlay/>}</span>
         <span><FaForward /></span>
         </div>
 

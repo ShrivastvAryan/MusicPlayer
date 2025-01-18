@@ -1,4 +1,5 @@
 export const HeroSection=()=>{
+
     return(
         <>
         <div className="main-div">
