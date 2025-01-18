@@ -1,10 +1,12 @@
 import { FaPlay,  FaBackward , FaForward, FaPause} from "react-icons/fa";
+import { AiFillSound } from "react-icons/ai";
 import song from "/music/illahi.mp3?url"
 import { useEffect, useRef, useState } from "react";
 
 export const MusicFooter=()=>{
     const[isPlaying,setIsPlaying]=useState(false);
     const[currentTime,setCurrentTime]=useState(0);
+    const[isDragging,setIsDragging]=useState(false);
     const audioRef=useRef(new Audio(song)); // useRef keep the song intact at its place
 
     const toggleFile=()=>{
@@ -22,16 +24,23 @@ export const MusicFooter=()=>{
     useEffect(() => {
         const audio = audioRef.current;
 
+        const onLoadedMetadata = () => {
+            setDuration(audio.duration);
+          };
+
         const handleTimeUpdate = () => {
+            if(!isDragging)
             setCurrentTime(audio.currentTime);
         };
 
+        audio.addEventListener("loadedmetadata", onLoadedMetadata);
         audio.addEventListener("timeupdate", handleTimeUpdate);
 
         return () => {
+            audio.removeEventListener("loadedmetadata", onLoadedMetadata);
             audio.removeEventListener("timeupdate", handleTimeUpdate);
         };
-    }, []);
+    }, [isDragging]);
     
 
     const formatTime = (time) => {
@@ -63,17 +72,21 @@ export const MusicFooter=()=>{
         </div>
 
        <div className="music-bar">
-       <span></span>
+       <span>
        <div className="bar-circle"></div>
+       </span>
        </div>
 
        </div>
 
+    <div className="sound--bar-main">
+        <AiFillSound/>
     <div className="sound-bar">
         <div className="bar-circle"></div>
+    </div>
     </div>
 
     </div>
     </>
     )
-}
+}   
