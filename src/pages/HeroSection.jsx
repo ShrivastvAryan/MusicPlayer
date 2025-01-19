@@ -1,3 +1,5 @@
+import { FaCopyright } from "react-icons/fa";
+
 export const HeroSection=()=>{
 
     return(
@@ -12,6 +14,11 @@ export const HeroSection=()=>{
                     </span>
                     <span></span>
                     <span></span>
+                </div>
+                <div className="info">
+                    <p>
+                        <p><FaCopyright/></p>All copyrights reserved</p>
+                    <p>Designed and Developed By Aryan Shrivastava</p>
                 </div>
             </div>
 

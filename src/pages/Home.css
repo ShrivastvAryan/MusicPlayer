@@ -383,3 +383,115 @@ a{
     z-index: 2;
 }
 
+
+.info{
+    height: auto;
+    width: 18rem;
+    margin: 1rem;
+    padding-left: 1rem;
+
+    & p{
+        font-size: 0.9rem;
+        display: inline-block;
+    }
+}
+
+.light-mode{
+
+    & body{
+        background-color:#fffefe ; 
+    }
+
+    & .nav-div{
+        & .search-bar{
+            background-color: rgb(177, 2, 2);
+    }
+    }
+        
+    & div{
+        color: rgb(8, 8, 8);
+    }
+
+    & .main-div{
+    
+        & .hero-section1{
+            background-color: rgb(170, 169, 169);
+        }
+    
+        & .hero-section2{
+            background-color: rgb(170, 169, 169);
+        }
+    }
+
+    & .music--player-div{
+     background-color: #242323;
+        
+    }
+
+    & .music-list1{
+    
+        & p{
+            color: rgb(17, 17, 17);
+        }
+    }
+
+    & .music--list1-div{
+    
+        & span{
+            color: rgb(15, 15, 15);
+    
+         }
+
+         & .music-artist{
+            color: rgb(29, 28, 28);
+        }
+    }
+
+    & .hero-section1{
+
+        & p{
+            color:rgb(20, 20, 20);
+        }
+    
+        & .your--music-list{
+            background-color: rgb(170, 169, 169);
+    
+        }
+    
+        & span{
+            background-color: #535252;
+    
+            & .your-title{
+                color: white;
+            }
+    
+        }
+    }
+
+    & .music--player-div{
+        background-color: white;
+    
+    
+        & .img-details{
+    
+            & p{
+                color: rgb(24, 23, 23);
+            }
+        }
+    }
+
+    & .music-play{
+        & span{
+            color: rgb(14, 13, 13);
+        }
+    
+        & .timer{
+            color:rgb(26, 25, 25);
+        }
+    }
+
+    & .sound--bar-main{
+        color: rgb(19, 19, 19);
+    }
+    
+}

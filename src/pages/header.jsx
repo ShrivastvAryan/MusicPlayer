@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { MdLightMode } from "react-icons/md";
 
 export const Header=()=>{
+
+
     return(
         <>
         <header>

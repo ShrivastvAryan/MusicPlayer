@@ -1,12 +1,16 @@
 import { Header} from "./header"
 import { HeroSection } from "./HeroSection"
 import { MusicFooter } from "./Footer"
+import { MdLightMode, MdDarkMode } from "react-icons/md";
 
-import "./lightmode.css";
-import"./Home.css";
+import "./Home.css";
+
+import { useState } from "react";
 
 
 export const Homepage=()=>{
+
+    
     return(
         <>
         <Header/>
